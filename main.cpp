@@ -1,3 +1,4 @@
+/*Ö÷º¯Êý*/ 
 #include"Dijkstra.h"
 #include<iostream>
 using namespace std;
