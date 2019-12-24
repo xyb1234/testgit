@@ -36,7 +36,7 @@ public:
     void print_path(int);
     void add_edge();
 	void delete_edge();
-	void insertdian();
+	void insertdian(int h);
 	void deletedian();
 	void print_blank(int begin);
 };

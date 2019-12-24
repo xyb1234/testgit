@@ -1,4 +1,3 @@
-/*主函数*/ 
 #include"Dijkstra.h"
 #include<iostream>
 using namespace std;
@@ -21,6 +20,7 @@ using namespace std;
         int choice = 0;
         cin >> choice;
         int b = 0;
+        int c=0;
         switch (choice)
         {
         case 1:
@@ -42,7 +42,9 @@ using namespace std;
             graph.deletedian();
             break;
         case 5:
-            graph.insertdian();
+        	cout<<"请输入要添加的点"<<endl;
+			cin>>b; 
+            graph.insertdian(b);
             break;
         }
         cout << "是否想要继续操作?（1代表继续操作，0代表结束操作）";

@@ -1,3 +1,6 @@
+#include "Dijkstra.h"
+#include <iostream>
+#include <string>
 using namespace std;
 #include<sstream>
 #include<fstream>
@@ -14,9 +17,9 @@ void Graph_DG::print_path(int begin) {
     for (int i = 0; i != this->vexnum; i++) {
         if(dis[i].value!=INT_MAX)
         cout << dis[i].path << "=" << dis[i].value << endl;
-        else {
+        /*else {
             cout << dis[i].path << "是无最短路径的" << endl;
-        }
+        }*/
     }
 }
 void Graph_DG::print_blank(int begin){
@@ -27,15 +30,42 @@ void Graph_DG::print_blank(int begin){
         if(dis[i].value!=INT_MAX)
         {
         	if(dis[i].path[dis[i].path.length()-2]>='0'&&dis[i].path[dis[i].path.length()-2]<='9')
-        	cout<<dis[i].path[dis[i].path.length()-2]<<dis[i].path[dis[i].path.length()-1]<<"\t"<< dis[i].path[6] << "\t" << dis[i].value << endl;
+        	{
+        		if(begin>9)
+        		{
+        			if(dis[i].path[8]>='0'&&dis[i].path[8]<='9')
+        			cout<<dis[i].path[dis[i].path.length()-2]<<dis[i].path[dis[i].path.length()-1]<<"\t"<< dis[i].path[7] << dis[i].path[8]<<"\t" << dis[i].value << endl;
+        			else
+        			cout<<dis[i].path[dis[i].path.length()-2]<<dis[i].path[dis[i].path.length()-1]<<"\t"<< dis[i].path[7] << "\t" << dis[i].value << endl;
+				}
+        		else
+        		{
+        			if(dis[i].path[7]>='0'&&dis[i].path[7]<='9')
+        			cout<<dis[i].path[dis[i].path.length()-2]<<dis[i].path[dis[i].path.length()-1]<<"\t"<< dis[i].path[6] << dis[i].path[7]<<"\t" << dis[i].value << endl;
+        			else
+        			cout<<dis[i].path[dis[i].path.length()-2]<<dis[i].path[dis[i].path.length()-1]<<"\t"<< dis[i].path[6] << "\t" << dis[i].value << endl;
+				}
+			 } 
         	else
-        	cout <<dis[i].path[dis[i].path.length()-1]<<"\t"<< dis[i].path[6] << "\t" << dis[i].value << endl;
+        	{
+        		if(begin>9)
+        		cout <<dis[i].path[dis[i].path.length()-1]<<"\t"<< dis[i].path[7] << "\t" << dis[i].value << endl;
+        		else
+        		
+        		cout <<dis[i].path[dis[i].path.length()-1]<<"\t"<< dis[i].path[6] << "\t" << dis[i].value << endl;
+			}
+        	
 		}
-        else {
+        /*else {
             if(dis[i].path[dis[i].path.length()-2]>='0'&&dis[i].path[dis[i].path.length()-2]<='9')
-        	cout<<dis[i].path[dis[i].path.length()-2]<<dis[i].path[dis[i].path.length()-1]<<"\t"<< "无" << "\t" << "∞"<< endl;
+        	{
+        		cout<<dis[i].path[dis[i].path.length()-2]<<dis[i].path[dis[i].path.length()-1]<<"\t"<<"无"  << "\t" << "∞" << endl;
+			 } 
         	else
-        	cout <<dis[i].path[dis[i].path.length()-1]<<"\t"<< "无" << "\t" << "∞"<< endl;
-        }
+        	{
+        		
+        		cout <<dis[i].path[dis[i].path.length()-1]<<"\t"<< "无" << "\t" << "∞" << endl;
+			}
+        }*/
     }
 }
