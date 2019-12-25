@@ -32,14 +32,14 @@ public:
     //打印邻接矩阵
     void print();
     //求最短路径
-    void Dijkstra(int begin);
+    int Dijkstra(int begin);
     //打印最短路径
     void print_path(int);
     void add_edge();
 	void delete_edge();
 	void insertdian(int h);
 	void deletedian();
-	void print_blank(int begin);
+	int print_blank(int begin);
 	int convert(int begin);
 	int convert1(int begin);
 };

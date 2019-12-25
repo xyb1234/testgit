@@ -20,6 +20,17 @@ string to_string(const _T& t) {
 	return os.str();
 }
 void Graph_DG::Dijkstra(int begin){
+	int test=0;
+    for(int i=0;i<this->vexnum;++i)
+    {
+    	if(flag[i]==begin)
+    	test=1;
+	}
+	if(test==0)
+	{
+		cout<<"不存在"<<begin<<"路由器"<<endl; 
+		return ;
+	}
     //首先初始化我们的dis数组
     int i;
     for (i = 0; i < this->vexnum; i++) {

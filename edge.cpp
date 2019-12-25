@@ -12,8 +12,8 @@ void Graph_DG::add_edge()
 	int j;
 	int value;
 	cin>>i>>j>>value;
-	arc[i-1][j-1]=value;
-	arc[j-1][i-1]=value;
+	arc[convert(i)][convert(j)]=value;
+	arc[convert(j)][convert(i)]=value;
 }
 void Graph_DG::delete_edge()
 {
@@ -21,6 +21,6 @@ void Graph_DG::delete_edge()
 	int i;
 	int j;
 	cin>>i>>j;
-	arc[i-1][j-1]=INT_MAX;
-	arc[j-1][i-1]=INT_MAX;
+	arc[convert(i)][convert(j)]=INT_MAX;
+	arc[convert(j)][convert(i)]=INT_MAX;
 }

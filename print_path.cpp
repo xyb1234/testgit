@@ -35,7 +35,17 @@ void Graph_DG::print_path(int begin) {
     }
 }
 void Graph_DG::print_blank(int begin){
-    string str;
+    int test=0;
+    for(int i=0;i<this->vexnum;++i)
+    {
+    	if(flag[i]==begin)
+    	test=1;
+	}
+	if(test==0)
+	{
+		cout<<"不存在"<<begin<<"路由器"<<endl; 
+	}
+	string str;
     str = "v" + to_string(begin);
     cout<<"目的"<<"\t"<<"下一跳"<<"\t"<<"权值"<<endl; 
     for (int i = 0; i != this->vexnum; i++) {
