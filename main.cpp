@@ -27,7 +27,7 @@ using namespace std;
             cout << "你想要查找的路由表号是：";
             cin >> b;
             graph.Dijkstra(b);
-            graph.print_path(b);
+           // graph.print_path(b);
             graph.print_blank(b);
             break;
         case 2:

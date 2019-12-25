@@ -4,7 +4,15 @@
 using namespace std;
 #include<sstream>
 #include<fstream>
-
+int  Graph_DG::convert(int begin)
+{
+	for(int i=0;i<vexnum;++i)
+    {
+    	if(flag[i]==begin)
+    	begin=i;
+	}
+	return begin;
+}
 template<typename _T>
 string to_string(const _T& t) {
 	ostringstream os;
@@ -17,12 +25,12 @@ void Graph_DG::Dijkstra(int begin){
     for (i = 0; i < this->vexnum; i++) {
         //设置当前的路径
         dis[i].path = "v" + to_string(begin) + "-->v" + to_string(i + 1);
-        dis[i].value = arc[begin - 1][i];
+        dis[i].value = arc[convert(begin)][i];
         dis[i].visit=false;
     }
     //设置起点的到起点的路径为0
-    dis[begin - 1].value = 0;
-    dis[begin - 1].visit = true;
+    dis[convert(begin)].value = 0;
+    dis[convert(begin)].visit = true;
     int count = 1;
     //计算剩余的顶点的最短路径（剩余this->vexnum-1个顶点）
     while (count != this->vexnum) {

@@ -18,8 +18,8 @@ void Graph_DG::createGraph() {
         in >> start >> end >> weight;
         //对邻接矩阵对应上的点赋值
         arc[start - 1][end - 1] = weight;
-        //无向图添加上这行代码
         arc[end - 1][start - 1] = weight;
+        flag[count]=count+1;
         ++count;
     }
 	}

@@ -16,6 +16,7 @@ struct Dis {
 };
 class Graph_DG {
 private:
+	int *flag;
     int vexnum;   //图的顶点个数
     int edge;     //图的边数
     int **arc;   //邻接矩阵
@@ -39,5 +40,7 @@ public:
 	void insertdian(int h);
 	void deletedian();
 	void print_blank(int begin);
+	int convert(int begin);
+	int convert1(int begin);
 };
 #endif
