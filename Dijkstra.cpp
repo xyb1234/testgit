@@ -20,6 +20,7 @@ string to_string(const _T& t) {
 	return os.str();
 }
 void Graph_DG::Dijkstra(int begin){
+	cout<<"Ð»ÓÀ±ó"<<endl;
 	int test=0;
     for(int i=0;i<this->vexnum;++i)
     {
