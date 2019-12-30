@@ -34,8 +34,17 @@ void Graph_DG::print_path(int begin) {
         }*/
     }
 }
-void Graph_DG::print_blank(int begin){
-    int test=0;
+int Graph_DG::print_blank(int begin){
+	int test=0;
+    for(int i=0;i<this->vexnum;++i)
+    {
+    	if(flag[i]==begin)
+    	test=1;
+	}
+	if(test==0)
+	{
+		return 0;
+	}
     for(int i=0;i<this->vexnum;++i)
     {
     	if(flag[i]==begin)
@@ -114,4 +123,5 @@ void Graph_DG::print_blank(int begin){
 			}
         }*/
     }
+    return 1;
 }
