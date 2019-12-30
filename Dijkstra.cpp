@@ -19,7 +19,7 @@ string to_string(const _T& t) {
 	os << t;
 	return os.str();
 }
-void Graph_DG::Dijkstra(int begin){
+int Graph_DG::Dijkstra(int begin){
 	cout<<"谢永斌"<<endl;
 	int test=0;
     for(int i=0;i<this->vexnum;++i)
@@ -30,7 +30,7 @@ void Graph_DG::Dijkstra(int begin){
 	if(test==0)
 	{
 		cout<<"不存在"<<begin<<"路由器"<<endl; 
-		return ;
+		return 0;
 	}
     //首先初始化我们的dis数组
     int i;
@@ -69,5 +69,5 @@ void Graph_DG::Dijkstra(int begin){
             }
         }
     }
-
+	return 1;
 }
