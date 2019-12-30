@@ -9,94 +9,94 @@ void Graph_DG::deletedian()
     cout << "你想要删除的点是：";
     int a = 0;
     cin >> a;
-    for(int i=0;i<vexnum;++i)
+    for (int i = 0; i < vexnum; ++i)
     {
-    	if(flag[i]==a)
-    	a=i+1;
-	}
-    int **temp=new int*[this->vexnum-1];
-    for(int i=0;i<vexnum-1;++i)
+        if (flag[i] == a)
+            a = i + 1;
+    }
+    int** temp = new int* [this->vexnum - 1];
+    for (int i = 0; i < vexnum - 1; ++i)
     {
-    	temp[i]=new int [this->vexnum-1];
-	}
-    int temp1[this->vexnum];
-    for(int i=0;i<vexnum;++i)
+        temp[i] = new int[this->vexnum - 1];
+    }
+    int* temp1 = new int[this->vexnum];
+    for (int i = 0; i < vexnum; ++i)
     {
-    	temp1[i]=flag[i];
-	}
-	flag=NULL;
-    flag=new int[this->vexnum-1];
-    for(int i=0;i<a-1;++i)
+        temp1[i] = flag[i];
+    }
+    flag = NULL;
+    flag = new int[this->vexnum - 1];
+    for (int i = 0; i < a - 1; ++i)
     {
-    	flag[i]=temp1[i];
-	}
-	for(int i=a;i<this->vexnum;++i)
-	{
-		flag[i-1]=temp1[i];
-	}
-	
-	cout<<a<<"d"<<endl;
-    for(int i=0;i<a-1;++i)
+        flag[i] = temp1[i];
+    }
+    for (int i = a; i < this->vexnum; ++i)
     {
-    	for(int j=0;j<a-1;++j)
-    	{
-    		temp[i][j]=arc[i][j];
-		}
-	}
-	cout<<"e"<<endl;
-	for(int i=0;i<a-1;++i)
-	{
-		for(int j=a;j<this->vexnum;++j)
-		{
-			temp[i][j-1]=arc[i][j];
-		}
-	}
-	for(int i=a;i<this->vexnum;++i)
-	{
-		for(int j=0;j<a-1;++j)
-		{
-			temp[i-1][j]=arc[i][j];
-		}
-	}
-	for(int i=a;i<this->vexnum;++i)
-	{
-		for(int j=a;j<this->vexnum;++j)
-		{
-			temp[i-1][j-1]=arc[i][j];
-		}
-	}
-	cout<<"c"<<endl;
-	delete arc;
-	arc = new int*[this->vexnum-1];
-	for(int i=0;i<vexnum-1;++i)
+        flag[i - 1] = temp1[i];
+    }
+
+    cout << a << "d" << endl;
+    for (int i = 0; i < a - 1; ++i)
     {
-    	arc[i]=new int [this->vexnum-1];
-	}
-	this->vexnum-=1;
-    for(int i=0;i<this->vexnum;++i)
-	{
-		for(int j=0;j<this->vexnum;++j)
-		{
-			arc[i][j]=temp[i][j];
-		}
-	}
-	cout<<"a"<<endl;
+        for (int j = 0; j < a - 1; ++j)
+        {
+            temp[i][j] = arc[i][j];
+        }
+    }
+    cout << "e" << endl;
+    for (int i = 0; i < a - 1; ++i)
+    {
+        for (int j = a; j < this->vexnum; ++j)
+        {
+            temp[i][j - 1] = arc[i][j];
+        }
+    }
+    for (int i = a; i < this->vexnum; ++i)
+    {
+        for (int j = 0; j < a - 1; ++j)
+        {
+            temp[i - 1][j] = arc[i][j];
+        }
+    }
+    for (int i = a; i < this->vexnum; ++i)
+    {
+        for (int j = a; j < this->vexnum; ++j)
+        {
+            temp[i - 1][j - 1] = arc[i][j];
+        }
+    }
+    cout << "c" << endl;
+    delete arc;
+    arc = new int* [this->vexnum - 1];
+    for (int i = 0; i < vexnum - 1; ++i)
+    {
+        arc[i] = new int[this->vexnum - 1];
+    }
+    this->vexnum -= 1;
+    for (int i = 0; i < this->vexnum; ++i)
+    {
+        for (int j = 0; j < this->vexnum; ++j)
+        {
+            arc[i][j] = temp[i][j];
+        }
+    }
+    cout << "a" << endl;
     print();
 }
 void Graph_DG::insertdian(int h)
 {
-	int temp1[this->vexnum];
-    for(int i=0;i<vexnum;++i)
+    int* temp1 = new int[this->vexnum];
+    for (int i = 0; i < vexnum; ++i)
     {
-    	temp1[i]=flag[i];
-	}
-	flag=NULL;
-    flag=new int[this->vexnum+1];
-    for(int i=0;i<this->vexnum;++i)
+        temp1[i] = flag[i];
+    }
+    flag = NULL;
+    flag = new int[this->vexnum + 1];
+    for (int i = 0; i < this->vexnum; ++i)
     {
-    	flag[i]=temp1[i];
-	}
-	flag[this->vexnum]=h; 
+        flag[i] = temp1[i];
+    }
+    flag[this->vexnum] = h;
     int c, d, e, edge_num = 0;
     cout << "输入要增加的边数" << endl;
     cin >> edge_num;
